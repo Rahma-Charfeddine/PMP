@@ -4,18 +4,18 @@ const mongoose = require('mongoose');
 const periodSchema = new mongoose.Schema(
   {
     year: {
-      type: Number, // 
+      type: Number,
       required: true,
 
     },
     half: {
-        type: number,
-        enum: [1, 2],
+      type: Number,
+      enum: [1, 2],
+      required: true,
     },
     reference: {
-        type: String,
-        required: true,
-        length: 10,
+      type: String,
+      length: 10,
     },
   },
   {

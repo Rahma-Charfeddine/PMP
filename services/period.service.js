@@ -1,6 +1,4 @@
-const CategoryRecipeModel = require('../models/category-recipe.model');
-const IngredientRecipeModel = require('../models/ingredient-recipe.model');
-const ReviewModel = require('../models/review.model');
+
 const PeriodModel = require('./../models/period.model')
 
 
