@@ -19,6 +19,11 @@
   "homepage": "https://github.com/Rahma-Charfeddine/Perforamance-management-project#readme",
   "dependencies": {
     "express": "^4.18.2",
-    "mongoose": "^7.0.3"
+    "mongoose": "^7.0.3",
+    "bcrypt": "^5.1.0",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.3",
+    "jsonwebtoken": "^9.0.0",
+    "nodemon": "^2.0.20"
   }
 }
