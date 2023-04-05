@@ -16,7 +16,7 @@ module.exports.Get_processes = async (req, res) => {
     try {
         const data = await ProcessModel.find();
         res.status(200).json({
-            msg: "get all elements from db",
+            msg: "get all processes from db",
             data: data
         })
     } catch (error) {
