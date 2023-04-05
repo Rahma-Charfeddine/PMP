@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
 const elementSchema = new mongoose.Schema(
-    {  
+    {
         subprocess_id: {
             type: mongoose.Schema.Types.ObjectId,
+            ref: 'subprocess',
             required: true,
         },
         element_name: {
@@ -11,19 +12,15 @@ const elementSchema = new mongoose.Schema(
             minlength: 2,
             maxlength: 50,
         },
-        description : {
+        description: {
             type: String,
             minlength: 3,
             maxlength: 500,
         }
-        
     },
     {
         timestamps: true,
     }
 );
-
-
 const ProcessModel = mongoose.model("element", elementSchema);
-
 module.exports = ProcessModel;

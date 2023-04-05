@@ -13,7 +13,10 @@ module.exports.Create_subprocess = async (req, res) => {
 
 module.exports.Get_all_subprocesses = async (req, res) => {
     try {
-        const data = await SubprocessModel.find();
+        const data = await SubprocessModel.find().populate({
+            path: 'process_id',
+            populate: { path: 'period_id', select: 'year half' }
+        });
         res.status(200).json({
             msg: "get all subprocesses from db",
             data: data
@@ -26,7 +29,14 @@ module.exports.Get_all_subprocesses = async (req, res) => {
 module.exports.Get_subprocess_by_id = async (req, res) => {
     try {
         const id = req.params.id
-        let result = await SubprocessModel.find({ _id: id })
+        let result = await SubprocessModel.find({ _id: id }).populate({
+            path: 'process_id',
+            populate: { path: 'period_id', select: 'year half' }
+        });
+        res.status(200).json({
+            msg: "get all subprocesses from db",
+            data: data
+        });
         res.status(201).send(result)
     } catch (error) {
         res.status(500).send(error)

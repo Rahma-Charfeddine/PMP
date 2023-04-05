@@ -1,12 +1,9 @@
 const mongoose = require('mongoose');
-
-
 const periodSchema = new mongoose.Schema(
   {
     year: {
       type: Number,
       required: true,
-
     },
     half: {
       type: Number,
@@ -23,10 +20,5 @@ const periodSchema = new mongoose.Schema(
   }
 
 );
-
-
-
-
 const PeriodModel = mongoose.model("period", periodSchema);
-
 module.exports = PeriodModel;

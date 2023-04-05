@@ -1,4 +1,4 @@
-const IndicatorModel = require('./../models/indiactor.model')
+const IndicatorModel = require('./../models/indicator.model')
 
 module.exports.Create_indicator = async (req, res) => {
     // console.log(req.body)

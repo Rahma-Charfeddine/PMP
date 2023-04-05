@@ -1,23 +1,22 @@
 const mongoose = require('mongoose');
-
-
 const indicatorSchema = new mongoose.Schema(
   {
     element_id: {
       type: mongoose.Schema.Types.ObjectId,
+      ref: 'element',
       required: true,
     },
     name: {
-        type: String,
-        required: true,
-        minlength: 2,
-        maxlength: 50,
+      type: String,
+      required: true,
+      minlength: 2,
+      maxlength: 50,
     },
     unit: {
-        type: String,
-        required: true,
-        minlength: 2,
-        maxlength: 32,
+      type: String,
+      required: true,
+      minlength: 2,
+      maxlength: 32,
     },
 
     goal: {
@@ -26,11 +25,10 @@ const indicatorSchema = new mongoose.Schema(
 
     },
     achieved: {
-        type: Number, // 
-        required: true,
-  
-      },
-    
+      type: Number, // 
+      required: true,
+    },
+
   },
   {
     timestamps: true,
@@ -38,5 +36,4 @@ const indicatorSchema = new mongoose.Schema(
 );
 
 const IndicatorModel = mongoose.model("indicator", indicatorSchema);
-
 module.exports = IndicatorModel;

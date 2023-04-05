@@ -13,7 +13,7 @@ module.exports.Create_element = async (req, res) => {
 
 module.exports.Get_all_elements = async (req, res) => {
     try {
-        const data = await ElementModel.find();
+        const data = await ElementModel.find().populate('subprocess_id');
         res.status(200).json({
             msg: "get all elements from db",
             data: data
@@ -26,7 +26,7 @@ module.exports.Get_all_elements = async (req, res) => {
 module.exports.Get_element_by_id = async (req, res) => {
     try {
         const id = req.params.id
-        let result = await ElementModel.find({ _id: id })
+        let result = await ElementModel.find({ _id: id }).populate('subprocess_id');
         res.status(201).send(result)
     } catch (error) {
         res.status(500).send(error)
@@ -36,7 +36,7 @@ module.exports.Get_element_by_id = async (req, res) => {
 module.exports.Update_element_by_id = async (req, res) => {
     try {
         const id = req.params.id
-        let result = await ElementModel.findByIdAndUpdate(id, { element_name: req.body.name }, { new: true });
+        let result = await ElementModel.findByIdAndUpdate(id, { element_name: req.body.name }, { new: true }).populate('subprocess_id');
         res.status(201).send(result)
 
     } catch (error) {

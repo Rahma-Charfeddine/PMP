@@ -26,7 +26,7 @@ module.exports.Get_all_periods = async (req, res) => {
 }
 
 module.exports.Get_period_by_id = async (req, res) => {
-    try{
+    try {
         const id = req.params.id
         let result = await PeriodModel.find({ _id: id })
         res.status(201).send(result)
