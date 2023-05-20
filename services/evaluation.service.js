@@ -1,6 +1,5 @@
 const EvaluationModel = require('./../models/evaluation.model')
 
-
 module.exports.Create_evaluation= async (req, res) => {
     // console.log(req.body)
     let data = new EvaluationModel(req.body)

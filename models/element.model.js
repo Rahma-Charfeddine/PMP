@@ -22,5 +22,5 @@ const elementSchema = new mongoose.Schema(
         timestamps: true,
     }
 );
-const ProcessModel = mongoose.model("element", elementSchema);
-module.exports = ProcessModel;
+const ElementModel = mongoose.model("element", elementSchema);
+module.exports = ElementModel;

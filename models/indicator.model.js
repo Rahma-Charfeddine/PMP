@@ -6,7 +6,7 @@ const indicatorSchema = new mongoose.Schema(
       ref: 'element',
       required: true,
     },
-    name: {
+    indicator_name: {
       type: String,
       required: true,
       minlength: 2,

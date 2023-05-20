@@ -33,6 +33,21 @@ module.exports.Get_element_by_id = async (req, res) => {
     }
 }
 
+
+
+module.exports.Get_all_elements_by_id_subprocess = async (req, res) => {
+    try {
+        const data = await ElementModel.find({ subprocess_id: req.params.idsubprocess })
+        res.status(200).json({
+            msg: "get all elements by id subprocess:" + req.params.idsub,
+            data: data
+        })
+    } catch (error) {
+        res.status(500).send(error)
+    }
+
+
+
 module.exports.Update_element_by_id = async (req, res) => {
     try {
         const id = req.params.id
@@ -53,4 +68,5 @@ module.exports.Delete_element_by_id = async (req, res) => {
     } catch (error) {
         res.status(500).send(error)
     }
+}
 }

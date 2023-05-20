@@ -26,6 +26,18 @@ module.exports.Get_all_subprocesses = async (req, res) => {
     }
 }
 
+module.exports.Get_all_subprocesses_by_id_process = async (req, res) => {
+    try {
+        const data = await SubprocessModel.find({ process_id: req.params.idprocess })
+        res.status(200).json({
+            msg: "get all subprocesses by id process:" + req.params.idprocess,
+            data: data
+        })
+    } catch (error) {
+        res.status(500).send(error)
+    }
+}
+
 module.exports.Get_subprocess_by_id = async (req, res) => {
     try {
         const id = req.params.id

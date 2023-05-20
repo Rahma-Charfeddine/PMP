@@ -2,13 +2,19 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
 const userSchema = new mongoose.Schema(
-  {
-    family_name: {
+  { registartion_number: {
       type: String, // 
       required: true,
       minlength: 2,
       maxlength: 32,
       uppercase: true,
+  },
+
+    family_name: {
+      type: String, // 
+      required: true,
+      minlength: 6,
+      maxlength: 15,
     },
     name: {
       type: String,
@@ -36,7 +42,7 @@ const userSchema = new mongoose.Schema(
       trim: true,
     },
     dateOfBirth: {
-      type: String,
+      type: Date,
       required: true,
       minlength: 4,
       maxlength: 10

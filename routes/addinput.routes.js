@@ -8,6 +8,7 @@ const { Create_additional_input,
 router.post("/", Create_additional_input);
 router.get("/:id", Get_addtional_input_by_id);
 router.get("/", Get_all_additional_inputs);
+
 router.delete("/:id", Delete_additional_input_by_id);
 router.put("/:id", Update_additional_input_by_id);
 
