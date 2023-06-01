@@ -27,6 +27,8 @@ const mEvalroutes = require("./routes/evaluation.routes")
 const inputroutes = require("./routes/input.routes")
 const addInputroutes = require("./routes/addInput.routes")
 const indicatorroutes = require("./routes/indicator.routes")
+const elementroutes = require("./routes/element.routes")
+const authroutes = require("./routes/auth.routes")
 
 
 
@@ -34,11 +36,14 @@ app.use("/user", userroutes)
 app.use("/period", periodroutes)
 app.use("/process", processroutes)
 app.use("/subprocess", subprocessroutes)
-// app.use("/indicator", indicatorroutes)
+app.use("/indicator", indicatorroutes)
 app.use("/responsiblities", responsibilitiesroutes)
 app.use("/mEval", mEvalroutes)
 app.use("/input", inputroutes)
 app.use("/addInput", addInputroutes)
+app.use("/element", elementroutes)
+
+app.use("/auth", authroutes)
 
 
 

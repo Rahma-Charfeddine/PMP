@@ -13,7 +13,7 @@ module.exports.Update_indicator_by_id = async (req, res) => {
 
 module.exports.Create_indicator = async (req, res) => {
     // console.log(req.body)
-    let data = new IndiactorModel(req.body)
+    let data = new IndicatorModel(req.body)
     try {
         let result = await data.save();
         res.status(200).send(result)

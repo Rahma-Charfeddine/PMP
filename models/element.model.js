@@ -10,12 +10,11 @@ const elementSchema = new mongoose.Schema(
             type: String,
             required: true,
             minlength: 2,
-            maxlength: 50,
+            
         },
         description: {
             type: String,
-            minlength: 3,
-            maxlength: 500,
+            minlength: 0,
         }
     },
     {

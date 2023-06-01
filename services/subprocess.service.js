@@ -1,4 +1,4 @@
-const SubprocessModel = require('./../models/element.model')
+const SubprocessModel = require('./../models/subprocess.model')
 
 module.exports.Create_subprocess = async (req, res) => {
     // console.log(req.body)
