@@ -69,3 +69,6 @@ module.exports.Delete_indicator_by_id = async (req, res) => {
         res.status(500).send(error)
     }
 }
+
+/*These functions encapsulate the logic for handling CRUD operations on indicators and interact with
+ the IndicatorModel, which represents the MongoDB collection for indicators.*/

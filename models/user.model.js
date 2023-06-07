@@ -13,7 +13,7 @@ const userSchema = new mongoose.Schema(
     family_name: {
       type: String, // 
       required: true,
-      minlength: 6,
+      minlength: 2,
       maxlength: 15,
     },
     name: {
