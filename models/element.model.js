@@ -21,5 +21,8 @@ const elementSchema = new mongoose.Schema(
         timestamps: true,
     }
 );
+
+elementSchema.index({ subprocess_id: 1, element_name: 1 }, { unique: true });
+
 const ElementModel = mongoose.model("element", elementSchema);
 module.exports = ElementModel;

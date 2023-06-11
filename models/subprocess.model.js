@@ -18,5 +18,8 @@ const Schema = new mongoose.Schema(
         timestamps: true,
     }
 );
+
+Schema.index({ process_id: 1, subprocess_name: 1 }, { unique: true });
+
 const SubprocessModel = mongoose.model("subprocess", Schema);
 module.exports = SubprocessModel;
