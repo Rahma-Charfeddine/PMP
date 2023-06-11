@@ -15,7 +15,11 @@ const Schema = new mongoose.Schema(
     },
     {
         timestamps: true,
+        unique: true
     }
 );
+
+Schema.index({ period_id: 1, process_name: 1 }, { unique: true });
+
 const ProcessModel = mongoose.model("process", Schema);
 module.exports = ProcessModel;
