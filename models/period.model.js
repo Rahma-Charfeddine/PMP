@@ -14,6 +14,11 @@ const periodSchema = new mongoose.Schema(
       type: String,
       length: 10,
     },
+    active: {
+      type: Boolean,
+      default: false
+
+    }
   },
   {
     timestamps: true,

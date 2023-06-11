@@ -13,6 +13,18 @@ module.exports.Create_period = async (req, res) => {
     }
 }
 
+module.exports.setNewActivePeriod = async (req, res) => {
+    const { id } = req.body;
+    try {
+        await PeriodModel.findOneAndUpdate({ active: true }, { active: false });
+        const result = await PeriodModel.findByIdAndUpdate(id, { active: true }, { new: true });
+        res.status(200).send(result);
+
+    } catch (error) {
+        res.status(500).send(error)
+    }
+}
+
 module.exports.Get_all_periods = async (req, res) => {
     try {
         const data = await PeriodModel.find();

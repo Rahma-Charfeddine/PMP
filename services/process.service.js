@@ -1,9 +1,19 @@
+const PeriodModel = require('../models/period.model');
 const ProcessModel = require('./../models/process.model')
 
 
 module.exports.Create_process = async (req, res) => {
-    console.log(req.body)
-    const data = await new ProcessModel(req.body)
+
+    let { process_name, period_id } = req.body;
+
+    if (!period_id || period_id === "") {
+        period_id = await PeriodModel.findOne({ active: true });
+    }
+    console.log(period_id)
+    const data = await new ProcessModel({
+        process_name,
+        period_id
+    })
     try {
         const result = await data.save();
         res.status(200).json(result)
