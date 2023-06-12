@@ -10,12 +10,10 @@ const indicatorSchema = new mongoose.Schema(
       type: String,
       required: true,
       minlength: 2,
-
     },
     unit: {
       type: String,
       required: true,
-
       maxlength: 32,
     },
 
@@ -30,13 +28,16 @@ const indicatorSchema = new mongoose.Schema(
     },
     is_max: {
       type: Boolean,
-      default:true
+      default: true
     },
   },
   {
     timestamps: true,
   }
 );
+
+indicatorSchema.index({ element_id: 1, indicator_name: 1 }, { unique: true });
+
 
 const IndicatorModel = mongoose.model("indicator", indicatorSchema);
 module.exports = IndicatorModel;
@@ -45,6 +46,19 @@ module.exports = IndicatorModel;
 with fields such as 
 element ID, indicator name, unit, goal, and achieved values. 
 It also creates a Mongoose model based on the schema and exports it for use in other parts of the application.*/
+
+
+
+
+
+// element_id: idelement,
+//         indicator_name: "",
+//         unit: "",
+//         goal: "",
+//         achieved: "",
+//         is_max: true
+
+
 
 /*The indicatorSchema is defined using mongoose.Schema.
  This schema defines the structure and validation rules for the Indicator model.*/

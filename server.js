@@ -11,17 +11,18 @@ app.use(cookieParser());
 
 mongoose.connect(process.env.DBURI)
 
-const userroutes = require("./routes/user.routes")
-const periodroutes = require("./routes/period.routes")
-const processroutes = require("./routes/process.routes")
-const subprocessroutes = require("./routes/subprocess.routes")
-const responsibilitiesroutes = require("./routes/responsabilities.routes")
-const mEvalroutes = require("./routes/evaluation.routes")
-const inputroutes = require("./routes/input.routes")
-const addInputroutes = require("./routes/addInput.routes")
-const indicatorroutes = require("./routes/indicator.routes")
-const elementroutes = require("./routes/element.routes")
-const authroutes = require("./routes/auth.routes")
+const userroutes = require("./routes/user.routes");
+const periodroutes = require("./routes/period.routes");
+const processroutes = require("./routes/process.routes");
+const subprocessroutes = require("./routes/subprocess.routes");
+const responsibilitiesroutes = require("./routes/responsabilities.routes");
+const mEvalroutes = require("./routes/evaluation.routes");
+const inputroutes = require("./routes/input.routes");
+const addInputroutes = require("./routes/addInput.routes");
+const indicatorroutes = require("./routes/indicator.routes");
+const elementroutes = require("./routes/element.routes");
+const chartsroutes = require("./routes/chart.routes");
+const authroutes = require("./routes/auth.routes");
 
 app.use("/user", userroutes)
 app.use("/period", periodroutes)
@@ -33,6 +34,8 @@ app.use("/mEval", mEvalroutes)
 app.use("/input", inputroutes)
 app.use("/addInput", addInputroutes)
 app.use("/element", elementroutes)
+
+app.use("/charts", chartsroutes)
 
 app.use("/auth", authroutes)
 
