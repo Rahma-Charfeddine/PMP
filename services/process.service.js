@@ -34,6 +34,19 @@ module.exports.Get_processes = async (req, res) => {
     }
 }
 
+module.exports.Get_processes_of_current_period = async (req, res) => {
+    try {
+        const period = await PeriodModel.findOne({ active: true });
+        const data = await ProcessModel.find({ period_id: period }).populate('period_id');
+        res.status(200).json({
+            msg: "get all processes from db",
+            data: data
+        })
+    } catch (error) {
+        res.status(500).send(error)
+    }
+}
+
 module.exports.Get_process_by_id = async (req, res) => {
     try {
         const id = req.params.id
